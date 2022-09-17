@@ -24,7 +24,12 @@
                     <li class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-house text-yellow-500"></i><p class="text-white">Home</p></li>
                     <li class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-heart text-yellow-500"></i><p class="text-white">Wishlist</p></li>
                     <li class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-trash text-yellow-500"></i><p class="text-white">Recycle Bin</p></li>
-                    <li class="flex items-center gap-2 text-2xl font-bold relative"><i class="fa-solid fa-cart-shopping text-yellow-500"></i><div class="badge badge-secondary absolute mt-[-50px] ml-[20px]">00</div></li>
+                    <li class="flex items-center gap-2 text-2xl font-bold">
+                        <label for="my-drawer-4" class="drawer-button relative">
+                            <i class="fa-solid fa-cart-shopping text-yellow-500"></i>
+                            <div class="badge badge-secondary absolute mt-[-20px] ml-[-4px]">00</div>
+                        </label>
+                    </li>
                 </ul>
                 <div class="dropdown dropdown-end">
                 <label tabindex="0" class="btn lg:hidden">
@@ -48,6 +53,22 @@
             </div>
           </div>
      </navbar>
+
+     <div class="drawer drawer-end">
+        <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+           
+         
+        </div> 
+        <div class="drawer-side">
+          <label for="my-drawer-4" class="drawer-overlay"></label>
+          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+            <!-- Sidebar content here -->
+            <li><a>Sidebar Item 1</a></li>
+            <li><a>Sidebar Item 2</a></li>
+          </ul>
+        </div>
+      </div>
     
 </body>
 </html>
