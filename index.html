@@ -25,8 +25,8 @@
                     <li class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-heart text-yellow-500"></i><p class="text-white">Wishlist</p></li>
                     <li class="flex items-center gap-2 text-2xl font-bold"><i class="fa-solid fa-trash text-yellow-500"></i><p class="text-white">Recycle Bin</p></li>
                     <li class="flex items-center gap-2 text-2xl font-bold">
-                        <label for="my-drawer-4" class="drawer-button relative">
-                            <i class="fa-solid fa-cart-shopping text-yellow-500"></i>
+                        <label for="my-drawer-4" class="drawer-button relative ">
+                            <i class="fa-solid fa-cart-shopping text-yellow-500 cursor-pointer"></i>
                             <div class="badge badge-secondary absolute mt-[-20px] ml-[-4px]">00</div>
                         </label>
                     </li>
@@ -167,25 +167,40 @@
                   </div>
                 </div>
             </div>
-             
            </div>
-         
         </div> 
         <div class="drawer-side">
           <label for="my-drawer-4" class="drawer-overlay"></label>
-          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content flex flex-col gap-5">
             <!-- Sidebar content here -->
-            <div class="flex border-2 items-center justify-between p-2">
-                <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-[70px]" >
-                <a>Sidebar Item 1</a>
-                <p>1</p>
-                <i class="fa-solid fa-trash"></i>
+            <div class="flex border-2 items-center justify-between p-1 pr-2 shadow-lg">
+                <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-[50px]" >
+                <p class="font-semibold">Pixel Phone 4.5g</p>
+                <p class=" border-yellow-700 border-2 rounded-lg px-3 py-1">1</p>
+                <i class="fa-solid fa-trash text-xl text-red-600"></i>
             </div>
-            
-            <li><a>Sidebar Item 2</a></li>
-          </ul>
+            <button class="btn bg-red-500 hover:bg-red-700">Clear Cart </button>
+            <div class="bg-slate-600 p-3 rounded-md flex flex-col gap-1">
+                <div class="flex justify-between">
+                    <p class="font-bold text-yellow-500">PRODUCT COUNT:</p>
+                    <P class="font-bold text-white" id="product-count">0</P>
+                </div>
+                <div class="flex justify-between">
+                    <p class="font-bold text-yellow-500">PRICE:</p>
+                    <P class="font-bold text-white" id="price">0</P>
+                </div>
+                <div class="flex justify-between">
+                    <p class="font-bold text-yellow-500">TAX:</p>
+                    <P class="font-bold text-white" id="tax">0</P>
+                </div>
+                <hr>
+                <div class="flex justify-between">
+                    <p class="font-bold text-yellow-500">TOTAL PRICE:</p>
+                    <P class="font-bold text-white" id="total-price">$ <span>0</span></P>
+                </div>
+            </div>
+          </ul> 
         </div>
       </div>
-    
 </body>
 </html>
