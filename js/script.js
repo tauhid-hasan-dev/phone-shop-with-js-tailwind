@@ -1,4 +1,6 @@
 let productCount = 0;
+let totalProductCount = 0;
+let priceOfProduct = 0;
 const phoneContainer = document.getElementById('phone-container');
 const addedPhoneContainer = document.getElementById('added-phone-container');
 
@@ -42,10 +44,10 @@ const displayPhonesToUi = async () =>{
 } */
 
 const addToCartById = async(id) =>{
-    console.log(id);
+    //console.log(id);
     const phones = await loadPhoneData();
     const phone = phones.find(phone => phone.id === id);
-    const {img, name} = phone;
+    const {img, name, price} = phone;
     const addedPhoneDiv = document.createElement('div');
     addedPhoneDiv.classList.add('flex', 'border-2', 'items-center', 'justify-between', 'p-2', 'shadow-lg', 'mt-3', 'rounded-md');
     addedPhoneDiv.innerHTML = `
@@ -55,7 +57,20 @@ const addToCartById = async(id) =>{
                     <i class="fa-solid fa-trash text-xl text-red-600"></i>
     `
     addedPhoneContainer.appendChild(addedPhoneDiv);
+    //update product count to badge on navbar
     document.getElementById('cart-product-count').innerText = ++productCount;
+    //update product count to the side bar 
+    document.getElementById('product-count-final').innerText = ++totalProductCount;
+    //updating the total price of added product
+    document.getElementById('price').innerText = priceOfProduct += price;
+    //update the tax amount
+    const totalPrice = parseFloat(document.getElementById('price').innerText);
+    const totalTax = totalPrice * 0.1;
+    document.getElementById('tax').innerText = totalTax.toFixed(2);
+    //update the total price
+    document.getElementById('total-price').innerText = (totalPrice + totalTax).toFixed(2);
+    
+    
 
 }
 
