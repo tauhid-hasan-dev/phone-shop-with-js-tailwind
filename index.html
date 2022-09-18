@@ -27,7 +27,7 @@
                     <li class="flex items-center gap-2 text-2xl font-bold">
                         <label for="my-drawer-4" class="drawer-button relative ">
                             <i class="fa-solid fa-cart-shopping text-yellow-500 cursor-pointer"></i>
-                            <div class="badge badge-secondary absolute mt-[-20px] ml-[-4px]">00</div>
+                            <div class="badge badge-secondary absolute mt-[-20px] ml-[-4px]" id="cart-product-count">00</div>
                         </label>
                     </li>
                 </ul>
@@ -57,133 +57,135 @@
      <div class="drawer drawer-end">
         <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content">
-           <div class="card-container max-w-[1200px] mx-[10px] md:mx-[20px] lg:mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+           <div class="card-container max-w-[1200px] mx-[10px] md:mx-[20px] lg:mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="phone-container">
           <!-- cards -->
-            <div class="card card-compact bg-base-100 shadow-xl">
-                <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
-                <div class="card-body flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <h2 class="card-title">Pixel 5</h2>
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-heart mr-2 "></i>
-                            <i class="fa-solid fa-square-minus text-red-600"></i>
+            <!--     <div class="card card-compact bg-base-100 shadow-xl">
+                    <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
+                    <div class="card-body flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="card-title">Pixel 5</h2>
+                            <div class="text-2xl">
+                                <i class="fa-solid fa-heart mr-2 "></i>
+                                <i class="fa-solid fa-square-minus text-red-600"></i>
+                            </div>
                         </div>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p class="text-xl font-bold">Price: 450</p>
+                    <div class="card-actions justify-between">
+                        <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
+                        <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
                     </div>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p class="text-xl font-bold">Price: 450</p>
-                  <div class="card-actions justify-between">
-                    <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
-                    <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
-                  </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-compact bg-base-100 shadow-xl">
-                <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
-                <div class="card-body flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <h2 class="card-title">Pixel 5</h2>
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-heart mr-2 "></i>
-                            <i class="fa-solid fa-square-minus text-red-600"></i>
+                <div class="card card-compact bg-base-100 shadow-xl">
+                    <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
+                    <div class="card-body flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="card-title">Pixel 5</h2>
+                            <div class="text-2xl">
+                                <i class="fa-solid fa-heart mr-2 "></i>
+                                <i class="fa-solid fa-square-minus text-red-600"></i>
+                            </div>
                         </div>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p class="text-xl font-bold">Price: 450</p>
+                    <div class="card-actions justify-between">
+                        <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
+                        <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
                     </div>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p class="text-xl font-bold">Price: 450</p>
-                  <div class="card-actions justify-between">
-                    <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
-                    <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
-                  </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-compact  bg-base-100 shadow-xl">
-                <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
-                <div class="card-body flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <h2 class="card-title">Pixel 5</h2>
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-heart mr-2 "></i>
-                            <i class="fa-solid fa-square-minus text-red-600"></i>
+                <div class="card card-compact  bg-base-100 shadow-xl">
+                    <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
+                    <div class="card-body flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="card-title">Pixel 5</h2>
+                            <div class="text-2xl">
+                                <i class="fa-solid fa-heart mr-2 "></i>
+                                <i class="fa-solid fa-square-minus text-red-600"></i>
+                            </div>
                         </div>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p class="text-xl font-bold">Price: 450</p>
+                    <div class="card-actions justify-between">
+                        <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
+                        <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
                     </div>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p class="text-xl font-bold">Price: 450</p>
-                  <div class="card-actions justify-between">
-                    <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
-                    <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
-                  </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-compact bg-base-100 shadow-xl">
-                <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
-                <div class="card-body flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <h2 class="card-title">Pixel 5</h2>
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-heart mr-2 "></i>
-                            <i class="fa-solid fa-square-minus text-red-600"></i>
+                <div class="card card-compact bg-base-100 shadow-xl">
+                    <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
+                    <div class="card-body flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="card-title">Pixel 5</h2>
+                            <div class="text-2xl">
+                                <i class="fa-solid fa-heart mr-2 "></i>
+                                <i class="fa-solid fa-square-minus text-red-600"></i>
+                            </div>
                         </div>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p class="text-xl font-bold">Price: 450</p>
+                    <div class="card-actions justify-between">
+                        <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
+                        <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
                     </div>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p class="text-xl font-bold">Price: 450</p>
-                  <div class="card-actions justify-between">
-                    <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
-                    <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
-                  </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-compact bg-base-100 shadow-xl">
-                <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
-                <div class="card-body flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <h2 class="card-title">Pixel 5</h2>
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-heart mr-2 "></i>
-                            <i class="fa-solid fa-square-minus text-red-600"></i>
+                <div class="card card-compact bg-base-100 shadow-xl">
+                    <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
+                    <div class="card-body flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="card-title">Pixel 5</h2>
+                            <div class="text-2xl">
+                                <i class="fa-solid fa-heart mr-2 "></i>
+                                <i class="fa-solid fa-square-minus text-red-600"></i>
+                            </div>
                         </div>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p class="text-xl font-bold">Price: 450</p>
+                    <div class="card-actions justify-between">
+                        <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
+                        <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
                     </div>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p class="text-xl font-bold">Price: 450</p>
-                  <div class="card-actions justify-between">
-                    <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
-                    <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
-                  </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-compact bg-base-100 shadow-xl">
-                <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
-                <div class="card-body flex flex-col gap-4">
-                    <div class="flex items-center justify-between">
-                        <h2 class="card-title">Pixel 5</h2>
-                        <div class="text-2xl">
-                            <i class="fa-solid fa-heart mr-2 "></i>
-                            <i class="fa-solid fa-square-minus text-red-600"></i>
+                <div class="card card-compact bg-base-100 shadow-xl">
+                    <figure class="p-4 "><img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl"/></figure>
+                    <div class="card-body flex flex-col gap-4">
+                        <div class="flex items-center justify-between">
+                            <h2 class="card-title">Pixel 5</h2>
+                            <div class="text-2xl">
+                                <i class="fa-solid fa-heart mr-2 "></i>
+                                <i class="fa-solid fa-square-minus text-red-600"></i>
+                            </div>
                         </div>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <p class="text-xl font-bold">Price: 450</p>
+                    <div class="card-actions justify-between">
+                        <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
+                        <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
                     </div>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                  <p class="text-xl font-bold">Price: 450</p>
-                  <div class="card-actions justify-between">
-                    <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
-                    <button class="btn btn-secondary btn-outline w-[48%]"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
-                  </div>
-                </div>
-            </div>
+                    </div>
+                </div> -->
            </div>
         </div> 
         <div class="drawer-side">
           <label for="my-drawer-4" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content flex flex-col gap-5">
             <!-- Sidebar content here -->
-            <div class="flex border-2 items-center justify-between p-1 pr-2 shadow-lg">
-                <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-[50px]" >
-                <p class="font-semibold">Pixel Phone 4.5g</p>
-                <p class=" border-yellow-700 border-2 rounded-lg px-3 py-1">1</p>
-                <i class="fa-solid fa-trash text-xl text-red-600"></i>
+            <div id="added-phone-container">
+                <!-- <div class="flex border-2 items-center justify-between p-1 pr-2 shadow-lg">
+                    <img src="https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-[50px]" >
+                    <p class="font-semibold">Pixel Phone 4.5g</p>
+                    <p class=" border-yellow-700 border-2 rounded-lg px-3 py-1">1</p>
+                    <i class="fa-solid fa-trash text-xl text-red-600"></i>
+                </div> -->
             </div>
-            <button class="btn bg-red-500 hover:bg-red-700">Clear Cart </button>
+            <button class="btn bg-red-500 hover:bg-red-700 border-none">Clear Cart </button>
             <div class="bg-slate-600 p-3 rounded-md flex flex-col gap-1">
                 <div class="flex justify-between">
                     <p class="font-bold text-yellow-500">PRODUCT COUNT:</p>
-                    <P class="font-bold text-white" id="product-count">0</P>
+                    <P class="font-bold text-white" id="product-count-final">0</P>
                 </div>
                 <div class="flex justify-between">
                     <p class="font-bold text-yellow-500">PRICE:</p>
@@ -202,5 +204,6 @@
           </ul> 
         </div>
       </div>
+      <script src="js/script.js"></script>
 </body>
 </html>
