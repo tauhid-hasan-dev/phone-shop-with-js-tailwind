@@ -4,6 +4,7 @@ let priceOfProduct = 0;
 const phoneContainer = document.getElementById('phone-container');
 const addedPhoneContainer = document.getElementById('added-phone-container');
 
+
 const loadPhoneData = async() =>{
     const url = "../data.json"
     const res = await fetch(url);
@@ -11,7 +12,7 @@ const loadPhoneData = async() =>{
     return data;
 }
 
-const displayPhonesToUi = async () =>{
+const displayPhonesToUi = async() =>{
     const phones = await loadPhoneData();
     phones.forEach(phone => {
         const {id, price, img, name} = phone;
@@ -31,7 +32,7 @@ const displayPhonesToUi = async () =>{
           <p class="text-xl font-bold">Price: ${price}</p>
           <div class="card-actions justify-between">
             <button class="btn btn-primary btn-outline w-[48%]"> <i class="fa-solid fa-circle-info mr-2"></i> See Details</button>
-            <button class="btn btn-secondary btn-outline w-[48%]" onclick = "addToCartById('${id}')"> <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
+            <button class="btn btn-secondary btn-outline w-[48%]" onclick = "addToCartById('${id}')"  > <i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
           </div>
         </div>
         `
@@ -39,12 +40,8 @@ const displayPhonesToUi = async () =>{
     });
 }
 
-/* function addToCartById (id){
-    const phones = 
-} */
 
 const addToCartById = async(id) =>{
-    //console.log(id);
     const phones = await loadPhoneData();
     const phone = phones.find(phone => phone.id === id);
     const {img, name, price} = phone;
@@ -54,7 +51,7 @@ const addToCartById = async(id) =>{
                     <img src="${img}" alt="" class="w-[50px]" >
                     <p class="font-semibold">${name}</p>
                     <p class=" border-yellow-700 border-2 rounded-lg px-3 py-1">1</p>
-                    <i class="fa-solid fa-trash text-xl text-red-600"></i>
+                    <i class="fa-solid fa-trash text-xl text-red-600 "></i>
     `
     addedPhoneContainer.appendChild(addedPhoneDiv);
     //update product count to badge on navbar
@@ -65,14 +62,29 @@ const addToCartById = async(id) =>{
     document.getElementById('price').innerText = priceOfProduct += price;
     //update the tax amount
     const totalPrice = parseFloat(document.getElementById('price').innerText);
-    const totalTax = totalPrice * 0.1;
+    const totalTax = totalPrice.toFixed(2) * 0.1;
     document.getElementById('tax').innerText = totalTax.toFixed(2);
     //update the total price
     document.getElementById('total-price').innerText = (totalPrice + totalTax).toFixed(2);
-    
-    
-
 }
+
+const handleClear = async () => {
+    addedPhoneContainer.innerText = '';
+    document.getElementById('cart-product-count').innerText = 0;
+    document.getElementById('product-count-final').innerText = 0;
+    document.getElementById('price').innerText = 0;
+    document.getElementById('tax').innerText = 0;
+    document.getElementById('total-price').innerText = 0;
+}
+
+
+const handleRemoveItem = () =>{
+    
+}
+
+
+
+
 
 
 displayPhonesToUi();
