@@ -61,14 +61,20 @@ const addToCartById = async(id) =>{
     `
     addedPhoneContainer.appendChild(addedPhoneDiv);
     //update product count to badge on navbar
+    
+    document.getElementById('cart-product-count').innerText = "";
     document.getElementById('cart-product-count').innerText = productCount;
     //update product count to the side bar 
+    document.getElementById('product-count-final').innerText = "";
     document.getElementById('product-count-final').innerText = productCount;
     //updating the total price of added product
+    document.getElementById('price').innerText = "";
     document.getElementById('price').innerText = priceOfProduct;
     //update the tax amount
+    document.getElementById('tax').innerText = "";
     document.getElementById('tax').innerText = tax.toFixed(2);
     //update the total price
+    document.getElementById('total-price').innerText = "";
     document.getElementById('total-price').innerText = (priceOfProduct + tax).toFixed(2);
 }
 
