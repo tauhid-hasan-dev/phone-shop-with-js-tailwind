@@ -1,7 +1,7 @@
 let productCount = 0;
-let totalProductCount = 0;
 let priceOfProduct = 0;
 let cart = [];
+let tax = 0;
 
 
 
@@ -43,11 +43,14 @@ const displayPhonesToUi = async() =>{
 
 
 const addToCartById = async(id) =>{
+    productCount = productCount + 1;
     const addedPhoneContainer = document.getElementById('added-phone-container');
     const phones = await loadPhoneData();
     const phone = phones.find(phone => phone.id === id);
     cart.push(phone)
     const {id:productId, img, name, price} = phone;
+    priceOfProduct = priceOfProduct + price;
+    tax = priceOfProduct * 0.1;
     const addedPhoneDiv = document.createElement('div');
     addedPhoneDiv.classList.add('flex', 'border-2', 'items-center', 'justify-between', 'p-2', 'shadow-lg', 'mt-3', 'rounded-md');
     addedPhoneDiv.innerHTML = `
@@ -58,17 +61,15 @@ const addToCartById = async(id) =>{
     `
     addedPhoneContainer.appendChild(addedPhoneDiv);
     //update product count to badge on navbar
-    document.getElementById('cart-product-count').innerText = ++productCount;
+    document.getElementById('cart-product-count').innerText = productCount;
     //update product count to the side bar 
-    document.getElementById('product-count-final').innerText = ++totalProductCount;
+    document.getElementById('product-count-final').innerText = productCount;
     //updating the total price of added product
-    document.getElementById('price').innerText = priceOfProduct += price;
+    document.getElementById('price').innerText = priceOfProduct;
     //update the tax amount
-    const totalPrice = parseFloat(document.getElementById('price').innerText);
-    const totalTax = totalPrice.toFixed(2) * 0.1;
-    document.getElementById('tax').innerText = totalTax.toFixed(2);
+    document.getElementById('tax').innerText = tax.toFixed(2);
     //update the total price
-    document.getElementById('total-price').innerText = (totalPrice + totalTax).toFixed(2);
+    document.getElementById('total-price').innerText = (priceOfProduct + tax).toFixed(2);
 }
 
 const handleClear = async () => {
