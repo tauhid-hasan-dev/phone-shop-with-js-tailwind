@@ -1,8 +1,8 @@
 let productCount = 0;
 let totalProductCount = 0;
 let priceOfProduct = 0;
-const phoneContainer = document.getElementById('phone-container');
-const addedPhoneContainer = document.getElementById('added-phone-container');
+let cart = [];
+
 
 
 const loadPhoneData = async() =>{
@@ -13,6 +13,7 @@ const loadPhoneData = async() =>{
 }
 
 const displayPhonesToUi = async() =>{
+    const phoneContainer = document.getElementById('phone-container');
     const phones = await loadPhoneData();
     phones.forEach(phone => {
         const {id, price, img, name} = phone;
@@ -42,16 +43,18 @@ const displayPhonesToUi = async() =>{
 
 
 const addToCartById = async(id) =>{
+    const addedPhoneContainer = document.getElementById('added-phone-container');
     const phones = await loadPhoneData();
     const phone = phones.find(phone => phone.id === id);
-    const {img, name, price} = phone;
+    cart.push(phone)
+    const {id:productId, img, name, price} = phone;
     const addedPhoneDiv = document.createElement('div');
     addedPhoneDiv.classList.add('flex', 'border-2', 'items-center', 'justify-between', 'p-2', 'shadow-lg', 'mt-3', 'rounded-md');
     addedPhoneDiv.innerHTML = `
                     <img src="${img}" alt="" class="w-[50px]" >
                     <p class="font-semibold">${name}</p>
                     <p class=" border-yellow-700 border-2 rounded-lg px-3 py-1">1</p>
-                    <i class="fa-solid fa-trash text-xl text-red-600 "></i>
+                    <i class="fa-solid fa-trash text-xl text-red-600 " onclick ="handleRemoveItem('${productId}')"></i>
     `
     addedPhoneContainer.appendChild(addedPhoneDiv);
     //update product count to badge on navbar
@@ -69,6 +72,7 @@ const addToCartById = async(id) =>{
 }
 
 const handleClear = async () => {
+    const addedPhoneContainer = document.getElementById('added-phone-container');
     addedPhoneContainer.innerText = '';
     document.getElementById('cart-product-count').innerText = 0;
     document.getElementById('product-count-final').innerText = 0;
@@ -77,14 +81,27 @@ const handleClear = async () => {
     document.getElementById('total-price').innerText = 0;
 }
 
-
-const handleRemoveItem = () =>{
-    
+const handleRemoveItem = async(id) =>{
+    //console.log(id);
+    //console.log(cart);
+    const addedPhoneContainer = document.getElementById('added-phone-container');
+    addedPhoneContainer.innerHTML = '';
+    const remainedCartItem = cart.filter(phone => phone.id !== id);
+    //console.log(remainedCartItem);
+    cart = remainedCartItem;
+    remainedCartItem.forEach(phone => {
+        const {id:newId , img, name} = phone;
+        const addedPhoneDiv = document.createElement('div');
+        addedPhoneDiv.classList.add('flex', 'border-2', 'items-center', 'justify-between', 'p-2', 'shadow-lg', 'mt-3', 'rounded-md');
+        addedPhoneDiv.innerHTML = `
+                        <img src="${img}" alt="" class="w-[50px]" >
+                        <p class="font-semibold">${name}</p>
+                        <p class=" border-yellow-700 border-2 rounded-lg px-3 py-1">1</p>
+                        <i class="fa-solid fa-trash text-xl text-red-600" onclick = "handleRemoveItem('${newId}')"></i>
+        `
+        addedPhoneContainer.appendChild(addedPhoneDiv);
+    })
 }
-
-
-
-
 
 
 displayPhonesToUi();
